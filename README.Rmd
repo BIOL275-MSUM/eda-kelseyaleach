@@ -23,6 +23,9 @@ Frank E Harrell Jr, with contributions from Charles Dupont and
   many others. (2020). Hmisc: Harrell Miscellaneous. R package
   version 4.4-2. https://CRAN.R-project.org/package=Hmisc
 
+RStudio Team (2020). RStudio: Integrated Development Environment for R. RStudio,
+  PBC, Boston, MA URL http://www.rstudio.com/.
+
 U.S. Department of Health and Human Services (DHHS). National Center for Immunization and Respiratory   Diseases . The 2018 National Immunization Survey-Child, Atlanta, GA : Centers for Disease Control    and Prevention, 2020.
 
 Wickham et al., (2019). Welcome to the tidyverse. Journal of
