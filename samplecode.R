@@ -27,3 +27,8 @@ newtable <- select(table2018, INCPORAR, INCPORAR_I, INCPOV1, INCQ298A, P_UTDHEP,
 
 #Code for labeling tables
 #labs(caption="Source: CDC, NCIRD (2020), 2018 National Immunization Survey - Child.")
+
+#Table for counting utd hep vaccines per income group
+heppov <- na.omit(count(newtable, INCQ298A, P_UTDHEP)) %>% 
+  group_by(INCQ298A) %>% 
+  mutate(p=n/sum(n))

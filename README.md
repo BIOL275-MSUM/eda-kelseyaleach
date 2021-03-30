@@ -1,7 +1,7 @@
 README
 ================
 Kelsey Leach
-2021-03-25
+2021-03-30
 
 ## Introduction
 
@@ -23,6 +23,10 @@ obtained and the meaning of each variable in the dataset.
 
 Data was extracted using the filter function to select variables
 involving socioeconomic status and vaccination status (Wickham, 2019).
+Variables included were up-to-date status on the hepatitis B, rotavirus,
+haemophilus influenzae, pneumococcal conjugate, polio, influenza, MMR,
+and heptatitis A vaccines, as well as household income group, poverty
+status, and income to poverty ratio.
 
 ## Results
 
