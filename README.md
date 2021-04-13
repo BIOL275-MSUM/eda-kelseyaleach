@@ -1,9 +1,16 @@
-README
-================
-Kelsey Leach
-2021-03-30
 
-## Introduction
+<img src="https://www2.mnstate.edu/uploadedImages/Content/Marketing/logos/MSUM_Signature_Vert_Color.jpg" alt="MSUM logo" width="200" style="float:right">
+
+# Variation in the relationship between socioeconomic status and vaccinations in children over time
+
+Kelsey Leach
+
+Biosciences Department, Minnesota State University Moorhead, 1104 7th
+Avenue South, Moorhead, MN 56563 USA
+
+## Abstract
+
+\#\#Introduction
 
 ## Methods
 
@@ -30,9 +37,11 @@ status, and income to poverty ratio.
 
 ## Results
 
+![](README_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+
 ## Discussion
 
-## Work Cited
+## References
 
 Frank E Harrell Jr, with contributions from Charles Dupont and many
 others. (2020). Hmisc: Harrell Miscellaneous. R package version 4.4-2.

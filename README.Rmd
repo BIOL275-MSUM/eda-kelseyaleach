@@ -1,9 +1,20 @@
 ---
-title: "README"
-author: "Kelsey Leach"
-date: "`r format(Sys.Date())`"
 output: github_document
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE)
+```
+
+<img src="https://www2.mnstate.edu/uploadedImages/Content/Marketing/logos/MSUM_Signature_Vert_Color.jpg" alt="MSUM logo" width="200" style="float:right">
+
+# Variation in the relationship between socioeconomic status and vaccinations in children over time
+
+Kelsey Leach
+
+Biosciences Department, Minnesota State University Moorhead, 1104 7th Avenue South, Moorhead, MN 56563 USA
+
+## Abstract
 
 ## Introduction
 
@@ -15,10 +26,53 @@ This project used R Version 4.0.3 and R Studio Version 1.3.1093 (R Core Team, 20
 Data was extracted using the filter function to select variables involving socioeconomic status and vaccination status (Wickham, 2019). Variables included were up-to-date status on the hepatitis B, rotavirus, haemophilus influenzae, pneumococcal conjugate, polio, influenza, MMR, and heptatitis A vaccines, as well as household income group, poverty status, and income to poverty ratio. 
 
 ## Results
+```{r}
+#source("data/NISPUF18.R")
+source("nis18subimport.R")
+library(tidyverse)
+table2018 <- as_tibble(NISPUF18)
+newtable <- select(table2018, INCPORAR, INCPORAR_I, INCPOV1, INCQ298A, P_UTDHEP, P_UTDROT_S, P_UTDHIB, P_UTDPCV, P_UTDPOL, U24_FLU_24D, P_UTDMMX, P_UTDHEPA1, P_UTDHEPA2)
+fixIncomeLabels <- function(x) {
+  if (x == 10) {"$35001 - $40000"}
+  else if (x == 11) {"$40001 - $50000"}
+  else if (x == 12) {"$50001 - $60000"}
+  else if (x == 13) {"$60001 - $75000"}
+  else if (x == 14) {"$75001+"}
+  else if (x == 3) {"$0 - $7500"}
+  else if (x == 4) {"$7501 - $10000"}
+  else if (x == 5) {"$10001 - $17500"}
+  else if (x == 6) {"$17501 - $20000"}
+  else if (x == 7) {"$20001 - $25000"}
+  else if (x == 77) {"DON'T KNOW"}
+  else if (x == 8) {"$25001 - $30000"}
+  else if (x == 9) {"$30001 - $35000"}
+  else if (x == 99) {"REFUSED"}
+}
+heppovalt <- na.omit(count(newtable, INCQ298A, P_UTDHEP)) %>% 
+  group_by(INCQ298A) %>% 
+  mutate(p=n/sum(n)) %>% 
+  filter(INCQ298A != 77, INCQ298A != 99, P_UTDHEP == 1) %>% 
+  mutate(Income = fixIncomeLabels(INCQ298A)) %>% 
+  arrange(INCQ298A) %>% 
+  mutate(Income = as_factor(Income))
+
+ggplot(data = heppovalt) + 
+  geom_bar(mapping = aes(x = Income, y = p), stat = 'identity') +
+  labs(x = "Income Group", y = "Proportion") +
+  scale_y_continuous(breaks = seq(0, 1, 0.1), limits = c(0, 1), expand = expansion(mult = 0)) +
+  theme_classic(base_size = 12) +
+  theme(
+    axis.title = element_text(face = "bold"), 
+    axis.text = element_text(color = "black", size = rel(0.9)),
+    axis.text.x = element_text(angle = 45, hjust = 1), 
+    axis.ticks.x = element_blank()
+  ) + 
+  labs(caption="Source: CDC, NCIRD (2020), 2018 National Immunization Survey - Child.")
+```
 
 ## Discussion
 
-## Work Cited
+## References
 Frank E Harrell Jr, with contributions from Charles Dupont and
   many others. (2020). Hmisc: Harrell Miscellaneous. R package
   version 4.4-2. https://CRAN.R-project.org/package=Hmisc
