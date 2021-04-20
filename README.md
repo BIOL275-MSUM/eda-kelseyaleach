@@ -70,36 +70,37 @@ and refusals to answer.
 Results are based on the proportion of children (age: 19-35 months) who
 are up-to-date on all of the aforementioned vaccines.
 
-There is a steady increase in the proportion of vaccinated children as
-the income of their parent or guardian increases (Figure 1).
+There appears to be an increase in the proportion of vaccinated children
+as the income of their parent or guardian increases (Figure 1). The
+difference, however is not statistically significant (p = 0.4433).
 
 ![](README_files/figure-gfm/Income%20Group%20Average-1.png)<!-- -->
 
 Figure 1. The average proportion of vaccinated individuals with respect
 to income group.
 
-There is a positive trend showing an increase in the proportion of
-vaccinated children across the poverty status groups(Figure 2). There is
-not, however, a statistically significant difference between the
-proportion of vaccinated children between the years (p = 0.09154).
-Additionally, there is not a statistically significant difference in the
-difference between the poverty status groups over time.
-
-![](README_files/figure-gfm/Grouped%20bar%20graph-1.png)<!-- -->
-
-Figure 2. The proportion of individuals grouped by poverty status who
-are up-to-date on all 6 of the analyzed vaccines with respect to year.
-
 The proportion of vaccinated children living below poverty is lower than
 that of children living above poverty and children living well above
-poverty (\>$75K) are vaccinated in even higher proportions (Figure 3).
+poverty (\>$75K) are vaccinated in even higher proportions (Figure 2).
 There is a statistically significant difference in the proportion of
 vaccinated children between the three poverty statuses (p = 0.0001602).
 
 ![](README_files/figure-gfm/Poverty%20Status%20Average-1.png)<!-- -->
 
-Figure 3. The average proportion of vaccinated children with respect to
+Figure 2. The average proportion of vaccinated children with respect to
 poverty status.
+
+There is a positive trend showing an increase in the proportion of
+vaccinated children across the poverty status groups (Figure 3). There
+is not, however, a statistically significant difference between the
+proportion of vaccinated children between the years (p = 0.09154).
+Additionally, there is not a statistically significant difference in the
+difference between the poverty status groups over time (p = 0.4457).
+
+![](README_files/figure-gfm/Grouped%20bar%20graph-1.png)<!-- -->
+
+Figure 3. The proportion of individuals grouped by poverty status who
+are up-to-date on all 6 of the analyzed vaccines with respect to year.
 
 ## Discussion
 
@@ -134,9 +135,9 @@ RStudio Team (2020). RStudio: Integrated Development Environment for R.
 RStudio, PBC, Boston, MA URL <http://www.rstudio.com/>.
 
 U.S. Department of Health and Human Services (DHHS). National Center for
-Immunization and Respiratory Diseases . The 2018 National Immunization
-Survey-Child, Atlanta, GA : Centers for Disease Control and Prevention,
-2020.
+Immunization and Respiratory Diseases . The 2007-2019 National
+Immunization Survey-Child, Atlanta, GA : Centers for Disease Control and
+Prevention, 2020.
 
 Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source
 Software, 4(43), 1686, <https://doi.org/10.21105/joss.01686>

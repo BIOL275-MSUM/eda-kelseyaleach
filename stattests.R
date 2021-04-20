@@ -1,45 +1,8 @@
-povtable07b1 <- na.omit(count(newtable07, INCPOV1, P_UTDHEP, P_UTDHIB, P_UTDPCV, P_UTDPOL, P_UTDMMX, P_U12VRC)) %>% 
-  group_by(INCPOV1) %>% 
-  mutate(p=n/sum(n)) %>% 
-  mutate(ct = P_UTDHEP+P_UTDHIB+P_UTDPCV+P_UTDPOL+P_UTDMMX+P_U12VRC) %>% 
-  filter(INCPOV1 != 4, INCPOV1 ==1) %>% 
-  mutate(povLab = fixPovertyLabels(INCPOV1)) %>% 
-  mutate(year = "2007") %>% 
-  mutate(povLab = as_factor(povLab)) %>% 
-  mutate(Income = povLab) %>% 
-  select(Income, n, p, povLab, year, ct) %>% 
-  mutate(povLab = as_factor(povLab))
 
-povtable07b2 <- na.omit(count(newtable07, INCPOV1, P_UTDHEP, P_UTDHIB, P_UTDPCV, P_UTDPOL, P_UTDMMX, P_U12VRC)) %>% 
-  group_by(INCPOV1) %>% 
-  mutate(p=n/sum(n)) %>% 
-  mutate(ct = P_UTDHEP+P_UTDHIB+P_UTDPCV+P_UTDPOL+P_UTDMMX+P_U12VRC) %>% 
-  filter(INCPOV1 != 4, INCPOV1 ==2) %>% 
-  mutate(povLab = fixPovertyLabels(INCPOV1)) %>% 
-  mutate(year = "2007") %>% 
-  mutate(povLab = as_factor(povLab)) %>% 
-  mutate(Income = povLab) %>% 
-  select(Income, n, p, povLab, year, ct) %>% 
-  mutate(povLab = as_factor(povLab))
+# Difference between the pdiff by year ------------------------------------
 
-povtable07b3 <- na.omit(count(newtable07, INCPOV1, P_UTDHEP, P_UTDHIB, P_UTDPCV, P_UTDPOL, P_UTDMMX, P_U12VRC)) %>% 
-  group_by(INCPOV1) %>% 
-  mutate(p=n/sum(n)) %>% 
-  mutate(ct = P_UTDHEP+P_UTDHIB+P_UTDPCV+P_UTDPOL+P_UTDMMX+P_U12VRC) %>% 
-  filter(INCPOV1 != 4, INCPOV1 ==3) %>% 
-  mutate(povLab = fixPovertyLabels(INCPOV1)) %>% 
-  mutate(year = "2007") %>% 
-  mutate(povLab = as_factor(povLab)) %>% 
-  mutate(Income = povLab) %>% 
-  select(Income, n, p, povLab, year, ct) %>% 
-  mutate(povLab = as_factor(povLab))
-
-sum(povtable07b$n)
-sum(povtable07b1$n)
-sum(povtable07b2$n)
-sum(povtable07b3$n)
-chisq.test(x=c(4063, 5105, 2170), y=c(3777, 5221, 2338))
-
+resKrusDiff <- kruskal.test(c(0.13, 0.11, 0.14, 0.1, 0.11, 0.1, 0.12, 0.1, 0.08, 0.09, 0.08, 0.09, 0.11), c(2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007))
+resKrusDiff
 
 # Difference between poverty status groups ---------------------------------------
 
@@ -51,5 +14,11 @@ resKrusPov
 
 resKrusYr <- kruskal.test(p ~ year, data = yrtable12)
 resKrusYr
+
+
+# Difference between income groups ----------------------------------------
+
+resKrusInc <- kruskal.test(average ~ povLab, data = incsum)
+resKrusInc
 
 
