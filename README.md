@@ -20,15 +20,25 @@ the first months of life to protect from potentially life-threatening
 infections. Efforts such as the Childhood Immunization Initiative have
 pushed to make recommended immunizations more affordable and accessible
 for families with children. I used data from the Center for Disease
-Control’s National Immunization Surveys in order to answer the question:
-how has the relationship between socioeconomic status and vaccinations
-in children changed in recent years? Exploratory data analysis was
-performed to understand the relationship between socioeconomic status
-and children who received the recommended course of vaccinations and how
-this relationship evolves over time. These results are useful to dictate
-the target populations for future vaccination initiatives.
+Control’s National Immunization Surveys in order to analyze the
+relationship between time, socioeconomic status, and vaccination rate.
+Exploratory data analysis was performed to understand the relationship
+between socioeconomic status and children who received the recommended
+course of vaccinations and how this relationship evolves over time.
 
 ## Introduction
+
+Socioeconomic status has historically played a key role in vaccination
+status (Marks et al. 1979). There is a distinct lack of information
+surrounding vaccinations and socioeconomic in recent years, and how this
+relationship has evolved over time. This research addresses the
+question: how has the relationship between socioeconomic status and
+vaccinations in children changed in recent years? This will have
+implications in understanding potential factors that lead to
+unvaccinated children and whether this is related to
+accessibility/affordability or personal choice (Galarce et al. 2011).
+These results are also useful to dictate possible target populations for
+future vaccination initiatives.
 
 ## Methods
 
@@ -51,6 +61,9 @@ involving socioeconomic status and vaccination status (Wickham, 2019).
 Variables included were up-to-date status on the hepatitis B,
 haemophilus influenzae, pneumococcal conjugate, polio, MMR, and
 varicella vaccines, as well as poverty status and income group.
+Additional filtration was performed on the selected variables to
+eliminate entries with insufficient interviewer or provider data, NAs,
+and refusals to answer.
 
 ## Results
 
@@ -90,14 +103,28 @@ poverty status.
 
 ## Discussion
 
-The continued discrepancies in vaccinated individuals between poverty
-status groups
+There was an positive trend in the overall proportion of vaccinated
+children in the studied time period. This overall increase suggests the
+success of educationally-focused aspect of vaccination efforts. Despite
+the increase, the discrepancies based on income persist. These lingering
+differences emphasize that socioeconomic status is still a critical
+influence on vaccination rate. This is also indicative of the necessity
+of continued improvement of the accessibility and affordability of
+vaccines for those at and below the poverty level.
 
 ## References
 
 Frank E Harrell Jr, with contributions from Charles Dupont and many
 others. (2020). Hmisc: Harrell Miscellaneous. R package version 4.4-2.
 <https://CRAN.R-project.org/package=Hmisc>
+
+Galarce, E.M., Minsky, S., Viswanath, K. (2011) Socioeconomic status,
+demographics, beliefs and A(H1N1) vaccine uptake in the United States.
+Vaccine.
+
+Marks, J.S., Halpin, T.J., Irvin, J.J., Johnson, D.A., and Keller J.R.
+(1979) Risk Factors Associated with Failure to Receive Vaccinations.
+Pediatrics.
 
 R Core Team (2020). R: A language and environment for statistical
 computing. R Foundation for Statistical Computing, Vienna, Austria. URL
